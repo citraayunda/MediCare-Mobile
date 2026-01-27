@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>MediCare Mobile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-compact">
+
+  <div class="banner banner-compact">
+    <img src="assets/clinic.jpg.png" alt="Clinic">
+    <h2>Selamat Datang di MediCare Mobile</h2>
+    <p>
+      Aplikasi layanan kesehatan digital untuk memudahkan pemeriksaan & kontrol pasien.
+    </p>
+  </div>
+
+  <ion-grid class="grid-compact">
+    <ion-row>
+      <ion-col size="6" *ngFor="let f of fitur">
+        <ion-card
+          button
+          [routerLink]="f.url"
+          class="menu-card menu-card-compact">
+          <ion-card-content>
+            <ion-icon [name]="f.icon"></ion-icon>
+            <p>{{ f.title }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

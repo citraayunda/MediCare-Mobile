@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Registrasi Pasien</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-compact">
+
+  <form
+    [formGroup]="formPasien"
+    (ngSubmit)="submitForm()"
+    class="form-compact">
+
+    <ion-item>
+      <ion-label position="floating">Nama Pasien</ion-label>
+      <ion-input formControlName="nama"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">NIK</ion-label>
+      <ion-input formControlName="nik"></ion-input>
+    </ion-item>
+<ion-item lines="none" class="tanggal-inline">
+  <ion-label class="label-tanggal">Tanggal Lahir</ion-label>
+</ion-item>
+
+<ion-datetime
+  presentation="date"
+  locale="id-ID"
+  show-default-buttons="false"
+  formControlName="tglLahir"
+  class="datetime-inline">
+</ion-datetime>
+
+    <ion-item>
+      <ion-label>Jenis Kelamin</ion-label>
+      <ion-select formControlName="gender">
+        <ion-select-option value="Laki-laki">Laki-laki</ion-select-option>
+        <ion-select-option value="Perempuan">Perempuan</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Alamat</ion-label>
+      <ion-textarea formControlName="alamat"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Keluhan</ion-label>
+      <ion-textarea formControlName="keluhan"></ion-textarea>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      type="submit"
+      class="btn-compact"
+      [disabled]="formPasien.invalid || isSubmitting">
+
+      <ion-spinner *ngIf="isSubmitting" slot="start"></ion-spinner>
+      Simpan Data
+
+    </ion-button>
+
+  </form>
+
+</ion-content>

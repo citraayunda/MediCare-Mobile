@@ -1,0 +1,172 @@
+/* ===============================
+   CONTENT
+================================ */
+.content-compact {
+  --padding-top: 6px;
+  --padding-bottom: 8px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+}
+
+/* ===============================
+   TOOLBAR
+================================ */
+.toolbar-compact {
+  --min-height: 44px;
+}
+
+/* ===============================
+   SEARCH RS STYLE
+================================ */
+.search-compact {
+  --padding-start: 8px;
+  font-size: 13px;
+}
+
+/* ===============================
+   KATEGORI CHIP
+================================ */
+.kategori-scroll {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 0 8px 4px;
+}
+
+.chip-compact {
+  height: 26px;
+  font-size: 12px;
+  border-radius: 14px;
+}
+
+/* ===============================
+   LIST OBAT
+================================ */
+.item-obat-compact {
+  --padding-start: 10px;
+  --inner-padding-end: 6px;
+  --min-height: 64px;
+}
+
+.item-obat-compact h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  color: #222;
+}
+
+.item-obat-compact p {
+  font-size: 12px;
+  margin: 2px 0;
+  color: #555;
+}
+
+/* ===============================
+   THUMBNAIL
+================================ */
+ion-thumbnail {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ===============================
+   CART BUTTON
+================================ */
+.btn-cart-compact {
+  height: 28px;
+}
+
+/* ===============================
+   CHECKOUT CARD
+================================ */
+ion-card.card-compact {
+  margin: 10px;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADER */
+.card-header-compact {
+  padding: 10px 12px;
+}
+
+.card-header-compact ion-card-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* CONTENT */
+.card-content-compact {
+  padding: 6px 0;
+}
+
+/* ===============================
+   CHECKOUT ITEM
+================================ */
+.item-checkout-compact {
+  --padding-start: 10px;
+  --inner-padding-end: 6px;
+  --min-height: 44px;
+}
+
+.item-checkout-compact h3 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.item-checkout-compact p {
+  font-size: 12px;
+  color: #666;
+}
+
+/* QTY */
+.qty-text {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 6px;
+}
+
+/* ===============================
+   TOTAL
+================================ */
+.total-compact {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ===============================
+   BUTTON BAYAR
+================================ */
+.btn-bayar-compact {
+  margin: 12px;
+  height: 38px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+/* ===============================
+   ANDROID KECIL
+================================ */
+@media (max-height: 640px) {
+
+  ion-thumbnail {
+    width: 44px;
+    height: 44px;
+  }
+
+  .item-obat-compact h2 {
+    font-size: 13px;
+  }
+
+  .item-obat-compact p {
+    font-size: 11px;
+  }
+
+  .btn-bayar-compact {
+    height: 34px;
+    font-size: 12px;
+  }
+}

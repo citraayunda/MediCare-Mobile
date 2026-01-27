@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Apotekku</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="showCheckout = !showCheckout">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge color="danger" *ngIf="keranjang.length">
+          {{ keranjang.length }}
+        </ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SEARCH -->
+  <ion-toolbar class="toolbar-compact">
+    <ion-searchbar
+      class="search-compact"
+      placeholder="Cari obat..."
+      [(ngModel)]="query"
+      (ionInput)="filterObat()">
+    </ion-searchbar>
+  </ion-toolbar>
+
+  <!-- KATEGORI -->
+  <ion-toolbar class="kategori-toolbar toolbar-compact">
+    <div class="kategori-scroll">
+      <ion-chip
+        class="chip-compact"
+        *ngFor="let k of kategoriList"
+        [color]="selectedKategori === k ? 'primary' : 'light'"
+        (click)="pilihKategori(k)">
+        {{ k }}
+      </ion-chip>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-compact">
+
+  <!-- LIST OBAT -->
+  <ion-list>
+    <ion-item *ngFor="let item of filteredObat" class="item-obat-compact">
+
+      <ion-thumbnail slot="start">
+        <img [src]="item.foto">
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2>{{ item.nama }}</h2>
+        <p>{{ item.kategori }}</p>
+        <p>Rp {{ item.harga | number }}</p>
+        <p>Stok: {{ item.stok }}</p>
+      </ion-label>
+
+      <ion-button
+        slot="end"
+        color="success"
+        fill="clear"
+        class="btn-cart-compact"
+        (click)="tambahKeKeranjang(item, $event)">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- CHECKOUT -->
+  <ion-card *ngIf="showCheckout" class="card-compact">
+
+    <ion-card-header class="card-header-compact">
+      <ion-card-title>Checkout</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="card-content-compact">
+
+      <ion-item *ngFor="let k of keranjang" class="item-checkout-compact">
+        <ion-label>
+          <h3>{{ k.nama }}</h3>
+          <p>Rp {{ k.harga | number }}</p>
+        </ion-label>
+
+        <ion-button fill="clear" size="small" (click)="kurangQty(k)">
+          <ion-icon name="remove-circle-outline"></ion-icon>
+        </ion-button>
+
+        <ion-text class="qty-text">{{ k.qty }}</ion-text>
+
+        <ion-button fill="clear" size="small" (click)="tambahQty(k)">
+          <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button fill="clear" size="small" color="danger" (click)="hapusItem(k)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item class="total-compact">
+        <ion-label><strong>Total</strong></ion-label>
+        <ion-note slot="end" color="success">
+          <strong>Rp {{ totalHarga | number }}</strong>
+        </ion-note>
+      </ion-item>
+
+      <ion-button
+        expand="block"
+        color="primary"
+        class="btn-bayar-compact"
+        (click)="checkout()">
+        Bayar Sekarang
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,53 @@
+ /* ===============================
+   FORM RS / BPJS
+   =============================== */
+.form-compact ion-item {
+  --background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Label */
+.form-compact ion-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Datetime Button */
+ion-datetime-button {
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 13px;
+  padding: 10px 0;
+}
+
+/* Kalender popup */
+ion-datetime {
+  --background: #ffffff;
+  border-radius: 14px;
+}
+
+/* Modal */
+ion-modal {
+  --border-radius: 16px;
+}
+
+.tanggal-inline {
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.label-tanggal {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.datetime-inline {
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+}

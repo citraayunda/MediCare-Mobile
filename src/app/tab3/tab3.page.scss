@@ -1,0 +1,59 @@
+/* Card */
+.card-compact {
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+/* Header */
+.card-header-compact {
+  padding-bottom: 8px;
+}
+
+ion-card-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+ion-card-subtitle {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Item */
+.item-compact {
+  --padding-start: 0;
+  font-size: 14px;
+}
+
+.item-compact ion-icon {
+  color: var(--ion-color-primary);
+  font-size: 20px;
+  margin-right: 6px;
+}
+
+.label-title {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* Button */
+.btn-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.btn-delete {
+  --border-radius: 8px;
+}
+
+/* Empty state */
+.compact-empty {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.empty-icon {
+  font-size: 80px;
+  color: #bdbdbd;
+}

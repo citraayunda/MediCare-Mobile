@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Jadwal Kontrol</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-compact">
+
+  <ion-card class="card-compact">
+
+    <ion-card-header class="card-header-compact">
+      <ion-card-title>Form Jadwal Kontrol</ion-card-title>
+      <ion-card-subtitle>Isi data kontrol pasien</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <!-- PILIH PASIEN -->
+      <ion-item class="item-compact">
+        <ion-label position="stacked">Nama Pasien</ion-label>
+        <ion-select [(ngModel)]="kontrol.pasienId" placeholder="Pilih Pasien">
+          <ion-select-option *ngFor="let p of daftarPasien" [value]="p.id">
+            {{ p.nama }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- PILIH DOKTER -->
+      <ion-item class="item-compact">
+        <ion-label position="stacked">Dokter</ion-label>
+        <ion-select
+          [(ngModel)]="kontrol.dokter"
+          placeholder="Pilih Dokter"
+          (ionChange)="pilihDokter()">
+          <ion-select-option *ngFor="let d of daftarDokter" [value]="d">
+            {{ d.nama }} - {{ d.spesialis }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- PILIH JADWAL -->
+      <ion-item class="item-compact" *ngIf="jadwalDokter.length > 0">
+        <ion-label position="stacked">Jadwal Praktik</ion-label>
+        <ion-select [(ngModel)]="kontrol.jadwal" placeholder="Pilih Jadwal">
+          <ion-select-option *ngFor="let j of jadwalDokter" [value]="j">
+            {{ j.hari }} • {{ j.jam }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- TANGGAL -->
+      <ion-item class="item-compact">
+        <ion-label position="stacked">Tanggal Kontrol</ion-label>
+        <ion-datetime
+          presentation="date"
+          [(ngModel)]="kontrol.tanggal"
+          [isDateEnabled]="enableTanggalDokter"
+          preferWheel="false">
+        </ion-datetime>
+      </ion-item>
+
+      <!-- CATATAN -->
+      <ion-item class="item-compact">
+        <ion-label position="stacked">Catatan</ion-label>
+        <ion-textarea
+          rows="2"
+          [(ngModel)]="kontrol.catatan"
+          placeholder="Tambahkan catatan (opsional)">
+        </ion-textarea>
+      </ion-item>
+
+      <!-- BUTTON -->
+      <ion-button
+        expand="block"
+        color="primary"
+        class="btn-compact"
+        (click)="simpanKontrol()">
+        Simpan Jadwal Kontrol
+      </ion-button>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

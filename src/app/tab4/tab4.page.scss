@@ -1,0 +1,108 @@
+/* ===============================
+   CARD UTAMA
+================================ */
+.dokter-card {
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+/* ===============================
+   JUDUL HALAMAN
+================================ */
+.judul-dokter {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 0 16px;
+  color: #0b5ed7;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+   HEADER DOKTER
+================================ */
+.dokter-header {
+  padding-bottom: 6px;
+}
+
+.dokter-header ion-card-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dokter-header ion-card-subtitle {
+  font-size: 13px;
+  color: #6c757d;
+}
+
+/* ===============================
+   INFO DOKTER
+================================ */
+.dokter-info {
+  padding-top: 0;
+  padding-bottom: 8px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.info-row ion-icon {
+  font-size: 16px;
+  color: #0b5ed7;
+}
+
+/* ===============================
+   JADWAL
+================================ */
+.jadwal-section {
+  padding-top: 4px;
+}
+
+.jadwal-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #0b5ed7;
+  margin-bottom: 6px;
+}
+
+.jadwal-list ion-item {
+  --padding-start: 0;
+  font-size: 13px;
+}
+
+.jadwal-list h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.jadwal-list p {
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+}
+
+/* ===============================
+   HP KECIL
+================================ */
+@media (max-height: 640px) {
+  .judul-dokter {
+    font-size: 18px;
+  }
+
+  .info-row,
+  .jadwal-list h3 {
+    font-size: 12px;
+  }
+
+  .jadwal-list p {
+    font-size: 11px;
+  }
+}

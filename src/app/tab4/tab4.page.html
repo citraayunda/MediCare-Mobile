@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Jadwal Pemeriksaan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-compact">
+
+  <h2 class="judul-dokter">Jadwal Dokter</h2>
+
+  <ion-card *ngFor="let d of daftarDokter" class="dokter-card">
+
+    <!-- HEADER -->
+    <ion-card-header class="dokter-header">
+      <ion-card-title>{{ d.nama }}</ion-card-title>
+      <ion-card-subtitle>{{ d.spesialis }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <!-- INFO -->
+    <ion-card-content class="dokter-info">
+      <div class="info-row">
+        <ion-icon name="business-outline"></ion-icon>
+        <span><strong>Poli</strong> : {{ d.poli }}</span>
+      </div>
+
+      <div class="info-row">
+        <ion-icon name="document-text-outline"></ion-icon>
+        <span><strong>STR</strong> : {{ d.str }}</span>
+      </div>
+    </ion-card-content>
+
+    <!-- JADWAL -->
+    <ion-card-content class="jadwal-section">
+      <div class="jadwal-title">
+        <ion-icon name="time-outline"></ion-icon>
+        <strong>Jadwal Praktik</strong>
+      </div>
+
+      <ion-list lines="none" class="jadwal-list">
+        <ion-item *ngFor="let j of d.jadwal">
+          <ion-label>
+            <h3>{{ j.hari }}</h3>
+            <p>{{ j.jam }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

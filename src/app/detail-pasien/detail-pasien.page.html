@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Detail Pasien</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card *ngIf="pasien">
+    <ion-card-content>
+      <h2>{{ pasien.nama }}</h2>
+      <p><b>NIK:</b> {{ pasien.nik }}</p>
+      <p><b>Jenis Kelamin:</b> {{ pasien.gender }}</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

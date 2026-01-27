@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Keranjang</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="items.length > 0">
+    <ion-item *ngFor="let item of items; let i = index">
+      <ion-label>
+        <h2>{{ item.nama }}</h2>
+        <p>Harga: Rp {{ item.harga }}</p>
+      </ion-label>
+
+      <ion-button color="danger" fill="clear" (click)="hapus(i)">
+        Hapus
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="items.length === 0" style="text-align:center; margin-top:40px;">
+    <p>Keranjang masih kosong</p>
+  </div>
+
+  <ion-button expand="full" color="success" (click)="checkout()" *ngIf="items.length > 0">
+    Checkout
+  </ion-button>
+
+</ion-content>
